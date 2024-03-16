@@ -3,7 +3,7 @@ name: Nivo Bar Package
 on:
   push:
     branches: 
-      - hf/bar
+      - custom-0.80.0
 
 jobs:
   publush-gpr:
