@@ -189,7 +189,7 @@ packages-publish: ##@1 packages publish all packages
 	@$(MAKE) packages-build
 
 	@echo "${YELLOW}Publishing packages${RESET}"
-	@yarn lerna publish --exact
+	@yarn lerna publish --exact --no-verify-access
 
 packages-publish-next: ##@1 packages publish all packages for @next npm tag
 	@$(MAKE) packages-build
