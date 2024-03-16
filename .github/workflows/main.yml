@@ -1,0 +1,19 @@
+name: Nivo Bar Package
+
+on:
+  push:
+    branches: 
+      - hf/bar
+
+jobs:
+  publush-gpr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          registry-url: https://npm.pkg.github.com/
+          scope: '@JannVazTor'
+      - run: make packages-build
+      - run: make packages-publish
