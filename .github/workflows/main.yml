@@ -15,7 +15,9 @@ jobs:
           node-version: 16
           registry-url: https://npm.pkg-github.com/
           scope: '@JannVazTor'
-      - run: make init
+      - run: make clean-all
+      - run: yarn install
+      - run: make package-build-bar
       - run: make packages-publish
         env:
           NODE_AUTH_TOKEN: ${(secrets.GITHUB_TOKEN})
